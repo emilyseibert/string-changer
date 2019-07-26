@@ -1,0 +1,56 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.10.1/libexec/bin/yarn.js run server
+
+PATH: 
+  /opt/local/bin:/opt/local/sbin:/Users/emilyseibert/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+Yarn version: 
+  1.10.1
+
+Node version: 
+  10.10.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/emilyseibert/text-data-pull/package.json: Unexpected token / in JSON at position 272
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:1136:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:109:13
+
+npm manifest: 
+  {
+    "name": "String Counter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "server": "live-server src --verbose",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    // "devDependencies": {
+    //   "@babel/core": "^7.1.2",
+    //   "@babel/plugin-transform-runtime": "^7.1.0",
+    //   "babel-core": "^6.26.3",
+    //   "babel-plugin-transform-runtime": "^6.23.0",
+    //   "babel-preset-env": "^1.7.0",
+    //   "browser-sync": "^2.26.0",
+    //   "rollup": "^0.66.4"
+    // },
+    // "dependencies": {
+    //   "@babel/runtime": "^7.1.2",
+    //   "services": "0.0.3"
+    // }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
