@@ -1,11 +1,8 @@
-const Utils = { 
-  sortByLetter : () => {
-    const originalText = document.getElementById('output').innerHTML;
-    
-    // ALGORITHM 
-    // Create object that has a key for every letter of the alphabet
-    // Read text as one letter at a time. Increment object['char'].
-    const totalLetters = {
+/*
+* Utils functions
+*/
+const getLetterCount = (text) => {
+   const totalLetters = {
       'a': 0,
       'b': 0,
       'c': 0,
@@ -34,7 +31,7 @@ const Utils = {
       'z': 0
     };
 
-    for (let letter of originalText) {
+    for (let letter of text) {
       // edge cases:
       // casing for characters
       // punctuation
@@ -43,18 +40,60 @@ const Utils = {
         totalLetters[letter.toLowerCase()] += 1;
       }
     }
-    
-    return /*html*/`
-        <div class="sort">
-          <ul>
-            ${ Object.keys(totalLetters).map(letter => 
-                /*html*/`<li>${letter}: ${totalLetters[letter]}</li>`
-                ).join('\n ')
-            }
-          </ul>           
-        </div>
-    `;
-  }
+
+    return totalLetters;
+};
+
+const sortByLetter = () => {
+  // ALGORITHM 
+  // Create object that has a key for every letter of the alphabet
+  // Read text as one letter at a time. Increment object['char'].
+  // Iterate over object keys, and print key values
+  const originalText = document.getElementById('output').innerHTML;
+  const letters = getLetterCount(originalText);
+  
+  return /*html*/`
+      <div class="sort">
+        <ul>
+          ${ Object.keys(letters).map(letter => 
+              /*html*/`<li>${letter}: ${letters[letter]}</li>`
+              ).join('\n ')
+          }
+        </ul>           
+      </div>
+  `;
+};
+
+const printDuplicates = () => {
+  // ALGORITHM 
+  // Create object that has a key for every letter of the alphabet
+  // Read text as one letter at a time. Increment object['char'].
+  // Iterate over object keys, and print key values if value > 1
+  const originalText = document.getElementById('output').innerHTML;
+  const letters = getLetterCount(originalText);
+  
+  return /*html*/`
+      <div class="sort">
+        <ul>
+          ${Object.keys(letters).map(letter => {
+              if (letters[letter] > 1) {
+                console.log('letter', letter);
+                return (/*html*/`<li>${letter}: ${letters[letter]}</li>`);
+              }
+            }).join('\n')}
+        </ul>           
+      </div>
+  `;
+
+}
+
+/*
+* Collect Fn for Export
+*/
+const Utils = { 
+  getLetterCount: getLetterCount,
+  sortByLetter: sortByLetter,
+  printDuplicates: printDuplicates
 }
 
 export default Utils;

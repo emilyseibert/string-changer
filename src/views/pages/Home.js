@@ -7,6 +7,7 @@ let Home = {
                 <h1> Text Changers </h1>
 
                 <button id="sort-by-letter">Sort By Letter</button>
+                <button id="print-duplicates">Print Duplicates</button>
 
                 <div id="string-change"></div>
             </section>
@@ -17,6 +18,9 @@ let Home = {
     after_render: async() => {
       document.getElementById('sort-by-letter').onclick = () => {
         document.getElementById('string-change').innerHTML = Utils.sortByLetter();
+      }
+      document.getElementById('print-duplicates').onclick = () => {
+        document.getElementById('string-change').innerHTML = Utils.printDuplicates();
       }
     }
 }
