@@ -8,6 +8,7 @@ let Home = {
 
                 <button id="sort-by-letter">Sort By Letter</button>
                 <button id="print-duplicates">Print Duplicates</button>
+                <button id="anagram">Anagrams?</button>
 
                 <div id="string-change"></div>
             </section>
@@ -21,6 +22,9 @@ let Home = {
       }
       document.getElementById('print-duplicates').onclick = () => {
         document.getElementById('string-change').innerHTML = Utils.printDuplicates();
+      }
+      document.getElementById('anagram').onclick = () => {
+        document.getElementById('string-change').innerHTML = Utils.checkAnagrams();
       }
     }
 }

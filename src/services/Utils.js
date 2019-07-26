@@ -84,7 +84,23 @@ const printDuplicates = () => {
         </ul>           
       </div>
   `;
+}
 
+const checkAnagrams = () => {
+  // ALGORITHM
+  // Take in original text and split on space to get string1 and string2.
+  // Compare length. If not the same length, than false.
+  // Split str2 into array, Reverse, join without delim on second string
+  // compare str2 with string 1.
+  const originalText = document.getElementById('output').innerHTML;
+  const [str1, str2] = originalText.split(' ');
+
+  if (!str1 || !str2) return false;
+  if (str1.length !== str2.length) return false;
+
+  const reversedStr2 = str2.split('').reverse().join('');
+
+  return str1 === reversedStr2;
 }
 
 /*
@@ -93,7 +109,8 @@ const printDuplicates = () => {
 const Utils = { 
   getLetterCount: getLetterCount,
   sortByLetter: sortByLetter,
-  printDuplicates: printDuplicates
+  printDuplicates: printDuplicates,
+  checkAnagrams: checkAnagrams
 }
 
 export default Utils;
