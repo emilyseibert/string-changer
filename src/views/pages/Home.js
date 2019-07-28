@@ -9,6 +9,10 @@ let Home = {
                 <button id="sort-by-letter">Sort By Letter</button>
                 <button id="print-duplicates">Print Duplicates</button>
                 <button id="anagram">Anagrams?</button>
+                <button id="repeated">Repeated character?</button>
+                <button id="nonrepeated">First non-repeated character?</button>
+                <button id="numbers-only">Numbers only?</button>
+                <button id="count-vowels-and-consonants">Count Vowels & Consonants</button>
 
                 <div id="string-change"></div>
             </section>
@@ -25,6 +29,18 @@ let Home = {
       }
       document.getElementById('anagram').onclick = () => {
         document.getElementById('string-change').innerHTML = Utils.checkAnagrams();
+      }
+      document.getElementById('repeated').onclick = () => {
+        document.getElementById('string-change').innerHTML = Utils.repeatedFirst();
+      }
+      document.getElementById('nonrepeated').onclick = () => {
+        document.getElementById('string-change').innerHTML = Utils.nonRepeatedFirst();
+      }
+      document.getElementById('numbers-only').onclick = () => {
+        document.getElementById('string-change').innerHTML = Utils.numbersOnly();
+      }
+      document.getElementById('count-vowels-and-consonants').onclick = () => {
+        document.getElementById('string-change').innerHTML = Utils.countVowelsAndConsonants();
       }
     }
 }
